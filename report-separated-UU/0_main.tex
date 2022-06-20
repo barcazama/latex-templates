@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT SETUP %%
+%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+%% IMPORT PACKAGES %%
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % picture package
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+% \setlength{\parindent}{0pt} % stop indentation
+\usepackage[english]{babel} % allow use of accents
+\usepackage{amsmath} % ams setup for formula writting
+\usepackage{amsfonts} % maths font
+\usepackage{amssymb} % maths symb
+\usepackage{gensymb} % allow to use degree sign
+\usepackage{natbib} % allow use of citep and citet, biblatex natbib package
+% \usepackage[square,numbers]{natbib} % alternative reference with number only
+\usepackage{color} % allow use of color for links
+\usepackage{import} % load import - allow import of other tex documents
+\usepackage{hyperref} % add hyper-link in table of content and text ref
+\usepackage{fancyhdr} % to add footer and headers
+
+%% PACKAGES SETUP %%
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+} % hyperlink color
+\bibliographystyle{apalike} % define natbib references style
+\pagestyle{fancy} % set page style, see fancyhdr package for documentation
+\fancyhf{} % clear header base style, necessary for the 4 next lines
+
+%% CUSTOMS COMMANDS %%
+\newcommand{\comment}[1]{} % add new command to do block comments
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT INFORMATION %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{TITLE}
+\author{NAME - REFERENCE}
+\date{\today}
+\rhead{TITLE - NAME} % set top right header
+\lhead{LOGO} % set to left header
+\rfoot{Page \thepage} % set bottom right footer
+\lfoot{} % set bottom left footer
+
+%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT CONTENT %%
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent
+ABSTRACT LOCATION
+
+\\
+\\
+\paragraph{Keywords:} 
+\end{abstract}
+\newpage
+\section{Introduction}
+\import{./}{1_introduction.tex}
+\section{Methods}
+\import{./}{2_methods.tex}
+\section{Results}
+\import{./}{3_results.tex}
+\section{Discussion}
+\import{./}{4_discussion.tex}
+\section{Conclusion}
+\import{./}{5_conclusion.tex}
+
+
+%%%%%%%%%%%%%%%%
+%% REFERENCES %%
+%%%%%%%%%%%%%%%%
+%\newpage
+%\listoffigures
+%\listoftables
+%\newpage
+%\nocite{BIBTEX NAME} % Uncomment to force citation in references
+%\bibliography{REFERENCE_FILE_NAME_NO_EXTENSION} % insert references
+\end{document}
